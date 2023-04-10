@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <h1>Pass data to child component</h1><!-- Data parse -- "Input" should be imported-->
+
+      <br/>
+      <app-child [item]="data"></app-child>
+      <button (click)="update()">update child component</button>
+      <br/>
+      <br/>
+      <hr style="border:2px solid black;margin:auto"/>
+
+
+
+
+      <h1>Resuable component (child-parent)</h1><!-- Data parse -- "Input" should be imported-->
+      <br/>
+
+      <ul *ngFor="let user of userdata">
+        <app-child-reusable [item2]="user"></app-child-reusable>
+      </ul>
+
+      <br/>
+      <hr style="border:2px solid black;margin:auto"/>
+      <br/>
+
+
+      <h1>Data transfer from child child=>parent through function</h1><!-- Data send-- "ouput" should be imported-->
+      <br/>
+      <app-child-data-transfer (updatedataEvent)="updatedata($event)"></app-child-data-transfer>
+      
+      
+
+    </div>
+  </div>
+</div>
+
